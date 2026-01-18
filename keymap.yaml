@@ -14,7 +14,7 @@ layers:
   - I
   - O
   - P
-  - ''
+  - ADJ
   - LCTRL
   - {t: A, h: LCTRL}
   - {t: S, h: LALT}
@@ -39,12 +39,55 @@ layers:
   - .
   - /
   - RSHFT
-  - ESC
-  - {t: SPACE, h: NAV}
-  - {t: TAB, h: NUM}
+  - {t: ESC, h: NUM}
+  - SPACE
+  - {t: TAB, h: NAV}
   - RET
   - {t: BSPC, h: SYM}
-  - {t: DEL, h: ADJ}
+  - {t: DEL, h: MEDIA}
+  COLEMAK:
+  - {t: BASE, h: toggle}
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - ADJ
+  - LCTRL
+  - {t: A, h: LCTRL}
+  - {t: R, h: LALT}
+  - {t: S, h: LGUI}
+  - {t: T, h: LSHFT}
+  - G
+  - M
+  - {t: N, h: RSHFT}
+  - {t: E, h: RGUI}
+  - {t: I, h: RALT}
+  - {t: O, h: RCTRL}
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - RSHFT
+  - {t: ESC, h: NUM}
+  - SPACE
+  - {t: TAB, h: NAV}
+  - RET
+  - {t: BSPC, h: SYM}
+  - {t: DEL, h: MEDIA}
   NAV:
   - {t: ▽, type: trans}
   - Gui+Z
@@ -58,12 +101,12 @@ layers:
   - END
   - PG UP
   - {t: ▽, type: trans}
-  - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT
   - DOWN
@@ -71,7 +114,8 @@ layers:
   - PG DN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&studio_unlock'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -87,9 +131,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   SYM:
-  - TAB
+  - {t: ▽, type: trans}
   - '!'
   - '@'
   - '#'
@@ -100,8 +143,8 @@ layers:
   - '*'
   - (
   - )
-  - BSPC
-  - LCTRL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -113,7 +156,7 @@ layers:
   - ']'
   - \
   - '`'
-  - LSHFT
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -131,7 +174,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  ADJ:
+  MEDIA:
   - {t: ▽, type: trans}
   - F12
   - F7
@@ -211,52 +254,71 @@ layers:
   - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '0'
   - {t: ▽, type: trans}
-  COLEMAK:
-  - {t: BASE, h: toggle}
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ;
-  - ''
-  - LCTRL
-  - {t: A, h: LCTRL}
-  - {t: R, h: LALT}
-  - {t: S, h: LGUI}
-  - {t: T, h: LSHFT}
-  - G
-  - M
-  - {t: N, h: RSHFT}
-  - {t: E, h: RGUI}
-  - {t: I, h: RALT}
-  - {t: O, h: RCTRL}
-  - ''''
-  - LSHFT
-  - Z
-  - X
-  - C
-  - D
-  - V
-  - K
-  - H
-  - ','
-  - .
-  - /
-  - RSHFT
-  - ESC
-  - {t: SPACE, h: NAV}
-  - {t: TAB, h: NUM}
-  - RET
-  - {t: BSPC, h: SYM}
-  - {t: DEL, h: ADJ}
+  ADJ:
+  - '&bootloader'
+  - '&sys_reset'
+  - Gui+Sft+3
+  - Gui+Sft+4
+  - Gui+Ctl+Q
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+UP
+  - Ctl+DOWN
+  - {t: ▽, type: trans}
+  - '&sys_reset'
+  - {t: '&bootloader', type: held}
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - OUT TOG
+  - BRI DN
+  - BRI UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&caps_word'
+  - '&studio_unlock'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [16, 19]
+  k: '&caps_word'
+- p: [3, 15]
+  k: (
+- p: [8, 20]
+  k: )
+- p: [2, 14]
+  k: '['
+- p: [9, 21]
+  k: ']'
+- p: [4, 16]
+  k: '{'
+- p: [7, 19]
+  k: '}'
+- p: [26, 27]
+  k: Gui+C
+- p: [27, 28]
+  k: Gui+V
