@@ -4,12 +4,12 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
-#define COLEMAK 1
-#define NAV  2
-#define SYM  3
-#define MEDIA 4
-#define NUM  5
-#define ADJ  6
+#define NAV  1
+#define SYM  2
+#define NUM  3
+#define ADJ  4
+#define FN_MEDIA 5
+#define COLEMAK 6
 
 / {
     behaviors {
@@ -35,15 +35,16 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             hold-trigger-on-release;
         };
-    };
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <NAV SYM>;
-            then-layer = <MEDIA>;
+        lts: layer_tap_space {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&mo>, <&kp>;
         };
     };
-
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
@@ -102,19 +103,9 @@
             display-name = "BASE";
             bindings = <
                 &to COLEMAK &kp Q     &kp W       &kp E        &kp R       &kp T         &kp Y     &kp U        &kp I        &kp O        &kp P          &mo ADJ
-                &kp LCTRL &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G        &kp H     &hmr RSHFT J &hmr RGUI K &hmr RALT L &hmr RCTRL SEMI &kp SQT
+                &kp ESC &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G        &kp H     &hmr RSHFT J &hmr RGUI K &hmr RALT L &hmr RCTRL SEMI &kp SQT
                 &kp LSHFT &kp Z       &kp X       &kp C        &kp V       &kp B         &kp N     &kp M        &kp COMMA    &kp DOT      &kp FSLH       &kp RSHFT
-                                                  &lt NUM ESC &kp SPACE &lt NAV TAB     &kp RET &lt SYM BSPC &lt MEDIA DEL
-            >;
-        };
-
-        colemak {
-            display-name = "COLEMAK";
-            bindings = <
-                &to BASE  &kp Q       &kp W       &kp F        &kp P       &kp B         &kp J     &kp L        &kp U        &kp Y        &kp SEMI       &mo ADJ
-                &kp LCTRL &hml LCTRL A &hml LALT R &hml LGUI S &hml LSHFT T &kp G        &kp M     &hmr RSHFT N &hmr RGUI E &hmr RALT I &hmr RCTRL O    &kp SQT
-                &kp LSHFT &kp Z       &kp X       &kp C        &kp D       &kp V         &kp K     &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp RSHFT
-                                                  &lt NUM ESC &kp SPACE &lt NAV TAB     &kp RET &lt SYM BSPC &lt MEDIA DEL
+                                                  &lt NAV ESC &lts NUM SPACE &kp TAB     &kp RET &lt SYM BSPC &lt FN_MEDIA DEL
             >;
         };
 
@@ -138,16 +129,6 @@
             >;
         };
 
-        media {
-            display-name = "MEDIA";
-            bindings = <
-                &trans    &kp F12  &kp F7   &kp F8   &kp F9   &trans      &trans   &trans     &trans       &trans       &trans     &trans
-                &trans    &kp F11  &kp F4   &kp F5   &kp F6   &trans      &trans   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
-                &trans    &kp F10  &kp F1   &kp F2   &kp F3   &trans      &trans   &kp C_STOP &kp C_MUTE   &kp C_PP     &trans     &trans
-                                            &trans   &trans   &trans      &trans   &trans     &trans
-            >;
-        };
-
         num {
             display-name = "NUM";
             bindings = <
@@ -165,6 +146,26 @@
                 &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4   &out OUT_TOG &kp C_BRI_DN &kp C_BRI_UP &trans       &trans       &trans
                 &caps_word  &studio_unlock &trans      &trans         &trans        &trans         &trans       &trans       &trans       &trans       &trans       &trans
                                                        &trans         &trans        &trans         &trans       &trans       &trans
+            >;
+        };
+
+        fn_media {
+            display-name = "FN_MEDIA";
+            bindings = <
+                &trans    &kp F12  &kp F7   &kp F8   &kp F9   &trans      &trans   &trans     &trans       &trans       &trans     &trans
+                &trans    &kp F11  &kp F4   &kp F5   &kp F6   &trans      &trans   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
+                &trans    &kp F10  &kp F1   &kp F2   &kp F3   &trans      &trans   &kp C_STOP &kp C_MUTE   &kp C_PP     &trans     &trans
+                                            &trans   &trans   &trans      &trans   &trans     &trans
+            >;
+        };
+
+        colemak {
+            display-name = "COLEMAK";
+            bindings = <
+                &to BASE  &kp Q       &kp W       &kp F        &kp P       &kp B         &kp J     &kp L        &kp U        &kp Y        &kp SEMI       &mo ADJ
+                &kp ESC &hml LCTRL A &hml LALT R &hml LGUI S &hml LSHFT T &kp G        &kp M     &hmr RSHFT N &hmr RGUI E &hmr RALT I &hmr RCTRL O    &kp SQT
+                &kp LSHFT &kp Z       &kp X       &kp C        &kp D       &kp V         &kp K     &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp RSHFT
+                                                  &lt NAV ESC &lts NUM SPACE &kp TAB     &kp RET &lt SYM BSPC &lt FN_MEDIA DEL
             >;
         };
     };

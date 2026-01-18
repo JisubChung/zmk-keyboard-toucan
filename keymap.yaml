@@ -15,7 +15,7 @@ layers:
   - O
   - P
   - ADJ
-  - LCTRL
+  - ESC
   - {t: A, h: LCTRL}
   - {t: S, h: LALT}
   - {t: D, h: LGUI}
@@ -39,55 +39,12 @@ layers:
   - .
   - /
   - RSHFT
-  - {t: ESC, h: NUM}
-  - SPACE
-  - {t: TAB, h: NAV}
+  - {t: ESC, h: NAV}
+  - {t: SPACE, h: NUM}
+  - TAB
   - RET
   - {t: BSPC, h: SYM}
-  - {t: DEL, h: MEDIA}
-  COLEMAK:
-  - {t: BASE, h: toggle}
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ;
-  - ADJ
-  - LCTRL
-  - {t: A, h: LCTRL}
-  - {t: R, h: LALT}
-  - {t: S, h: LGUI}
-  - {t: T, h: LSHFT}
-  - G
-  - M
-  - {t: N, h: RSHFT}
-  - {t: E, h: RGUI}
-  - {t: I, h: RALT}
-  - {t: O, h: RCTRL}
-  - ''''
-  - LSHFT
-  - Z
-  - X
-  - C
-  - D
-  - V
-  - K
-  - H
-  - ','
-  - .
-  - /
-  - RSHFT
-  - {t: ESC, h: NUM}
-  - SPACE
-  - {t: TAB, h: NAV}
-  - RET
-  - {t: BSPC, h: SYM}
-  - {t: DEL, h: MEDIA}
+  - {t: DEL, h: FN_MEDIA}
   NAV:
   - {t: ▽, type: trans}
   - Gui+Z
@@ -125,9 +82,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -174,49 +131,6 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  MEDIA:
-  - {t: ▽, type: trans}
-  - F12
-  - F7
-  - F8
-  - F9
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F11
-  - F4
-  - F5
-  - F6
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - PREV
-  - VOL DN
-  - VOL UP
-  - NEXT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F10
-  - F1
-  - F2
-  - F3
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - STOP
-  - MUTE
-  - PP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
   NUM:
   - {t: ▽, type: trans}
   - '1'
@@ -254,8 +168,8 @@ layers:
   - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '0'
@@ -303,6 +217,92 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  FN_MEDIA:
+  - {t: ▽, type: trans}
+  - F12
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F11
+  - F4
+  - F5
+  - F6
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PREV
+  - VOL DN
+  - VOL UP
+  - NEXT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F10
+  - F1
+  - F2
+  - F3
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - STOP
+  - MUTE
+  - PP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  COLEMAK:
+  - {t: BASE, h: toggle}
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - ADJ
+  - ESC
+  - {t: A, h: LCTRL}
+  - {t: R, h: LALT}
+  - {t: S, h: LGUI}
+  - {t: T, h: LSHFT}
+  - G
+  - M
+  - {t: N, h: RSHFT}
+  - {t: E, h: RGUI}
+  - {t: I, h: RALT}
+  - {t: O, h: RCTRL}
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - RSHFT
+  - {t: ESC, h: NAV}
+  - {t: SPACE, h: NUM}
+  - TAB
+  - RET
+  - {t: BSPC, h: SYM}
+  - {t: DEL, h: FN_MEDIA}
 combos:
 - p: [16, 19]
   k: '&caps_word'
