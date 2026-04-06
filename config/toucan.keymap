@@ -57,49 +57,54 @@
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <16 19>;  // F + J (home row index fingers)
             bindings = <&caps_word>;
         };
         // Programming brackets (vertical combos)
         combo_lparen {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <3 15>;  // E + D
             bindings = <&kp LPAR>;
         };
         combo_rparen {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <8 20>;  // I + K
             bindings = <&kp RPAR>;
         };
         combo_lbkt {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <2 14>;  // W + S
             bindings = <&kp LBKT>;
         };
         combo_rbkt {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <9 21>;  // O + L
             bindings = <&kp RBKT>;
         };
         combo_lbrc {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <4 16>;  // R + F
             bindings = <&kp LBRC>;
         };
         combo_rbrc {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <7 19>;  // U + J
             bindings = <&kp RBRC>;
         };
         // Clipboard combos
+        combo_cut {
+            timeout-ms = <60>;
+            key-positions = <25 26>;  // Z + X
+            bindings = <&kp LG(X)>;
+        };
         combo_copy {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <26 27>;  // X + C
             bindings = <&kp LG(C)>;
         };
         combo_paste {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <27 28>;  // C + V
             bindings = <&kp LG(V)>;
         };
