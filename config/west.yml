@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: petejohanson
       url-base: https://github.com/petejohanson/
+    - name: geeksville
+      url-base: https://github.com/geeksville
     - name: caksoylar
       url-base: https://github.com/caksoylar
   projects:
@@ -13,10 +15,10 @@ manifest:
       remote: zmkfirmware
       import: app/west.yml
     - name: cirque-input-module
-      remote: petejohanson
-      revision: main
+      remote: geeksville
+      revision: toucan
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      revision: v0.3
   self:
     path: config
